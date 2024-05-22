@@ -1,13 +1,47 @@
+const path = require('path');
+const Page = require('./models/Page');
 const express = require('express');
 const sqlite3 = require('sqlite3').verbose();
 const User = require('./models/User');
 const DBManager = require('./db/DBManager');
 
-
 const app = express();
 const port = 3000;
 
-const db = new sqlite3.Database('.database.db');
+const dbManager = new DBManager('./database.db');
+
+// Set view engine to ejs
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
+
+// Serve static files from the public directory
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Redirect root URL to /home
+app.get('/', (req, res) => {
+    res.redirect('/home');
+});
+
+// Define the home route
+app.get('/home', (req, res) => {
+  // Create a new Page instance
+  const page = new Page('Home');
+  page.addNavbarItem('Home', '/home');
+  page.addNavbarItem('About', '/about');
+  page.addNavbarItem('Contact', '/contact');
+
+  // Render the home template with the page details
+  res.render('layout', {
+    title: page.title,
+    navbarItems: page.getNavbar(),
+    body: `<%- include('home') %>`
+  });
+});
+
+
+// Init user table
+User.createTable();
+
 
 // Example usage of the User class
 app.get('/create-user', (req, res) => {
@@ -36,7 +70,7 @@ app.get('/users', (req, res) => {
 
 //Endpoint to get data
 app.get('/data', (req, res) => {
-    db.all('SELECT * From my_table', [], (err, rows) => {
+    dbManager.db.all('SELECT * From my_table', [], (err, rows) => { 
         if (err) {
             throw err;
         }

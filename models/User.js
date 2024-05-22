@@ -1,3 +1,6 @@
+const DBManager = require('../db/DBManager');
+const dbManager = new DBManager('../database.db');
+
 class User {
     constructor(id, name, email, userName, password) {
       this.id = id;
@@ -5,6 +8,8 @@ class User {
       this.password = password;
       this.name = name;
       this.email = email;
+      this.bid_history = [];
+      this.registration_date = new Date();
     }
   
     // Method to display user information
