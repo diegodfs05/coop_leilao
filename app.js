@@ -8,6 +8,22 @@ const DBManager = require('./db/DBManager');
 const app = express();
 const port = 3000;
 
+
+
+// CONFIG EXPRESS PARA SERVIR DEPENDENCIAS ESTATICAS
+app.use('/public', express.static(path.join(__dirname, 'public')));
+// CONFIG EXPRESS PARA SERVIR PAGINAS ESTATICAS
+app.use('/static', express.static(path.join(__dirname, 'views/static')));
+// SERVIR HOMEPAGE ESTATICA
+app.get('/static/home', (req, res) => {
+    res.sendFile(path.join(__dirname, 'views/static/home/index.html'));
+});
+
+
+
+
+
+
 const dbManager = new DBManager('./database.db');
 
 // Set view engine to ejs
@@ -24,18 +40,18 @@ app.get('/', (req, res) => {
 
 // Define the home route
 app.get('/home', (req, res) => {
-  // Create a new Page instance
-  const page = new Page('Home');
-  page.addNavbarItem('Home', '/home');
-  page.addNavbarItem('About', '/about');
-  page.addNavbarItem('Contact', '/contact');
+    // Create a new Page instance
+    const page = new Page('Home');
+    page.addNavbarItem('Home', '/home');
+    page.addNavbarItem('About', '/about');
+    page.addNavbarItem('Contact', '/contact');
 
-  // Render the home template with the page details
-  res.render('layout', {
-    title: page.title,
-    navbarItems: page.getNavbar(),
-    body: `<%- include('home') %>`
-  });
+    // Render the home template with the page details
+    res.render('layout', {
+        title: page.title,
+        navbarItems: page.getNavbar(),
+        body: `<%- include('home') %>`
+    });
 });
 
 
@@ -70,7 +86,7 @@ app.get('/users', (req, res) => {
 
 //Endpoint to get data
 app.get('/data', (req, res) => {
-    dbManager.db.all('SELECT * From my_table', [], (err, rows) => { 
+    dbManager.db.all('SELECT * From my_table', [], (err, rows) => {
         if (err) {
             throw err;
         }
