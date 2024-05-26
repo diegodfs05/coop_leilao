@@ -1,5 +1,5 @@
-<!doctype html>
-<html lang="en">
+<!doctype xhtml>
+<html lang="pt-BR">
 
 <head>
   <title>Title</title>
@@ -16,34 +16,238 @@
 </head>
 
 <body>
-  <section id="sect-navbar" class="w-100 py-2">
+
+  <!-- 
+    NAVBAR
+  -->
+  <section id="sect-navbar" class="w-100">
+    <div class="w-100 bg-turq"></div>
     <div class="container">
-      <a href="./static/home">
-        <img alt="Logomarca Sicoob Credirio" src="https://www.sicoob.com.br/image/layout_set_logo?img_id=162142438&t=1716546336945" />
+      <a href="/static/home/">
+        <img alt="Logomarca Sicoob Credirio"
+          src="https://www.sicoob.com.br/image/layout_set_logo?img_id=162142438&t=1716546336945" />
       </a>
       <div class="floating-menu">
-        <a href="#sect-banner" target="_self">A promoção</a>
-        <a href="https://www.sicoob.com.br/documents/2257370/189198212/Regulamento_ANIVERSARIO-PREMIADO-SICOOB-CREDIRIO_SRE.ME-No_04.32370.2024.pdf" target="_blank">Regulamento</a> 
-        <a href="#sect-consulta" target="_self">Números da sorte</a>
-        <a href="#ganhadores" target="_self">Ganhadores</a>
-        <a href="#faq-anchor" target="_self">Perguntas frequentes</a>
+        <a href="/static/home">Início</a>
+        <a href="/static/categorias">Categorias</a>
+        <a href="/static/faq">Perguntas frequentes</a>
+        <a href="/static/login" class="btn btn-primary">Login</a>
+        <a href="/static/register" class="btn btn-primary">Registrar</a>
       </div>
-      <a class="menu-toggle" onclick="toggleNavbar()"> <svg class="bars-svg" viewbox="0 0 448 512"
-          xmlns="http://www.w3.org/2000/svg">
+      <a class="menu-toggle">
+        <svg class="bars-svg" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
           <path
             d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z">
           </path>
-        </svg> <svg class="cross-svg d-none" viewbox="0 0 384 512" xmlns="http://www.w3.org/2000/svg">
+        </svg>
+        <svg class="cross-svg d-none" viewbox="0 0 384 512" xmlns="http://www.w3.org/2000/svg">
           <path
             d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z">
           </path>
-        </svg> </a>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- 
+    BANNER
+  -->
+  <section id="sect-banner" class="w-100 bg-turq position-relative">
+    <div class="container">
+      <div class="banner-text position-absolute">
+        <h1 class="c-branco fs-3">Leilões do Sicoob</h1>
+        <p class="c-branco">Confira nossas oportunidades de negócios</p>
+      </div>
+    </div>
+    <picture>
+      <source media="(min-width: 1280px)" srcset="/public/media/banners/padrao-desktop-turq.jpg">
+      <source media="(min-width: 768px)" srcset="/public/media/banners/padrao-tablet-turq.jpg">
+      <img class="w-100" src="/public/media/banners/padrao-celular-turq.jpg" alt="Imagem de fundo do banner">
+    </picture>
+  </section>
+
+  <!--
+    CATEGORIAS
+  -->
+  <section id="sect-categorias" class="py-4 acland">
+    <div class="container title mb-3">
+      <h3 class="fs-4">Selecione uma categoria</h1>
+    </div>
+    <div class="container d-flex justify-content-center align-items-center flex-wrap">
+      <div class="card d-flex align-items-center flex-row p-2 m-1 w-sm-100">
+        <img src="/public/media/icons/carro_colorido.png" alt="ícone automóvel">
+        <div class="corpo-card ml-2">
+          <h2 class="fs-6 mb-0">Automóveis</h2>
+          <p class="mb-0 fs-sm lh-2">Carros, motos, caminhões</p>
+        </div>
+      </div>
+      <div class="card d-flex align-items-center flex-row p-2 m-1 w-sm-100">
+        <img src="/public/media/icons/casa_2_colorido.png" alt="ícone imóvel">
+        <div class="corpo-card ml-2">
+          <h2 class="fs-6 mb-0">Imóveis</h2>
+          <p class="mb-0 fs-sm lh-2">Apartamentos, casas, lotes, chácaras</p>
+        </div>
+      </div>
+      <div class="card d-flex align-items-center flex-row p-2 m-1 w-sm-100">
+        <img src="/public/media/icons/celular_computador_colorido.png" alt="ícone imóvel">
+        <div class="corpo-card ml-2">
+          <h2 class="fs-6 mb-0">Eletrônicos</h2>
+          <p class="mb-0 fs-sm lh-2">Equipamentos eletrônicos em geral</p>
+        </div>
+      </div>
+      <div class="card d-flex align-items-center flex-row p-2 m-1 w-sm-100">
+        <img src="/public/media/icons/dados_colorido.png" alt="ícone imóvel">
+        <div class="corpo-card ml-2">
+          <h2 class="fs-6 mb-0">Mobília</h2>
+          <p class="mb-0 fs-sm lh-2">Para sua casa ou sua empresa</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--
+    ANUNCIOS
+  -->
+  <section id="sect-anuncios" class="py-4 acland">
+    <div class="container d-flex justify-content-center align-items-center flex-wrap">
+      <div class="card p-2">
+        <div class="img-container position-relative mb-2">
+          <img src="/public/media/image-placeholder.jpg" alt="Fotografia do anúncio" class="w-100 border-radius-2">
+          <div class="modalidade mb-0 p-2 fs-sm bg-turq c-branco fw-600 border-radius-1 text-uppercase position-absolute lh-1">Leilão</div>
+        </div>
+        <div class="content">
+          <h5 class="c-turq fs-6 mb-1 fw-700">Título do anúncio</h5>
+          <p class="summary fs-sm mb-1">Resumo da descrição do anúncio, com limitação de caract...</p>
+          <p class="init-bid fs-sm mb-1">Lance inicial: R$ <span class="bid">3.650,00</span></p>
+          <p class="deadline fs-sm mb-0">Término: <span class="data c-verdem">10/04/2024</span></p>
+        </div>
+      </div>
+      <div class="card p-2">
+        <div class="img-container position-relative mb-2">
+          <img src="/public/media/image-placeholder.jpg" alt="Fotografia do anúncio" class="w-100 border-radius-2">
+          <div class="modalidade mb-0 p-2 fs-sm bg-turq c-branco fw-600 border-radius-1 text-uppercase position-absolute lh-1">Leilão</div>
+        </div>
+        <div class="content">
+          <h5 class="c-turq fs-6 mb-1 fw-700">Título do anúncio</h5>
+          <p class="summary fs-sm mb-1">Resumo da descrição do anúncio, com limitação de caract...</p>
+          <p class="init-bid fs-sm mb-1">Lance inicial: R$ <span class="bid">3.650,00</span></p>
+          <p class="deadline fs-sm mb-0">Término: <span class="data c-verdem">10/04/2024</span></p>
+        </div>
+      </div>
+      <div class="card p-2">
+        <div class="img-container position-relative mb-2">
+          <img src="/public/media/image-placeholder.jpg" alt="Fotografia do anúncio" class="w-100 border-radius-2">
+          <div class="modalidade mb-0 p-2 fs-sm bg-turq c-branco fw-600 border-radius-1 text-uppercase position-absolute lh-1">Leilão</div>
+        </div>
+        <div class="content">
+          <h5 class="c-turq fs-6 mb-1 fw-700">Título do anúncio</h5>
+          <p class="summary fs-sm mb-1">Resumo da descrição do anúncio, com limitação de caract...</p>
+          <p class="init-bid fs-sm mb-1">Lance inicial: R$ <span class="bid">3.650,00</span></p>
+          <p class="deadline fs-sm mb-0">Término: <span class="data c-verdem">10/04/2024</span></p>
+        </div>
+      </div>
+      <div class="card p-2">
+        <div class="img-container position-relative mb-2">
+          <img src="/public/media/image-placeholder.jpg" alt="Fotografia do anúncio" class="w-100 border-radius-2">
+          <div class="modalidade mb-0 p-2 fs-sm bg-turq c-branco fw-600 border-radius-1 text-uppercase position-absolute lh-1">Leilão</div>
+        </div>
+        <div class="content">
+          <h5 class="c-turq fs-6 mb-1 fw-700">Título do anúncio</h5>
+          <p class="summary fs-sm mb-1">Resumo da descrição do anúncio, com limitação de caract...</p>
+          <p class="init-bid fs-sm mb-1">Lance inicial: R$ <span class="bid">3.650,00</span></p>
+          <p class="deadline fs-sm mb-0">Término: <span class="data c-verdem">10/04/2024</span></p>
+        </div>
+      </div>
+      <div class="card p-2">
+        <div class="img-container position-relative mb-2">
+          <img src="/public/media/image-placeholder.jpg" alt="Fotografia do anúncio" class="w-100 border-radius-2">
+          <div class="modalidade mb-0 p-2 fs-sm bg-turq c-branco fw-600 border-radius-1 text-uppercase position-absolute lh-1">Leilão</div>
+        </div>
+        <div class="content">
+          <h5 class="c-turq fs-6 mb-1 fw-700">Título do anúncio</h5>
+          <p class="summary fs-sm mb-1">Resumo da descrição do anúncio, com limitação de caract...</p>
+          <p class="init-bid fs-sm mb-1">Lance inicial: R$ <span class="bid">3.650,00</span></p>
+          <p class="deadline fs-sm mb-0">Término: <span class="data c-verdem">10/04/2024</span></p>
+        </div>
+      </div>
+      <div class="card p-2">
+        <div class="img-container position-relative mb-2">
+          <img src="/public/media/image-placeholder.jpg" alt="Fotografia do anúncio" class="w-100 border-radius-2">
+          <div class="modalidade mb-0 p-2 fs-sm bg-turq c-branco fw-600 border-radius-1 text-uppercase position-absolute lh-1">Leilão</div>
+        </div>
+        <div class="content">
+          <h5 class="c-turq fs-6 mb-1 fw-700">Título do anúncio</h5>
+          <p class="summary fs-sm mb-1">Resumo da descrição do anúncio, com limitação de caract...</p>
+          <p class="init-bid fs-sm mb-1">Lance inicial: R$ <span class="bid">3.650,00</span></p>
+          <p class="deadline fs-sm mb-0">Término: <span class="data c-verdem">10/04/2024</span></p>
+        </div>
+      </div>
+      <div class="card p-2">
+        <div class="img-container position-relative mb-2">
+          <img src="/public/media/image-placeholder.jpg" alt="Fotografia do anúncio" class="w-100 border-radius-2">
+          <div class="modalidade mb-0 p-2 fs-sm bg-turq c-branco fw-600 border-radius-1 text-uppercase position-absolute lh-1">Leilão</div>
+        </div>
+        <div class="content">
+          <h5 class="c-turq fs-6 mb-1 fw-700">Título do anúncio</h5>
+          <p class="summary fs-sm mb-1">Resumo da descrição do anúncio, com limitação de caract...</p>
+          <p class="init-bid fs-sm mb-1">Lance inicial: R$ <span class="bid">3.650,00</span></p>
+          <p class="deadline fs-sm mb-0">Término: <span class="data c-verdem">10/04/2024</span></p>
+        </div>
+      </div>
+      <div class="card p-2">
+        <div class="img-container position-relative mb-2">
+          <img src="/public/media/image-placeholder.jpg" alt="Fotografia do anúncio" class="w-100 border-radius-2">
+          <div class="modalidade mb-0 p-2 fs-sm bg-turq c-branco fw-600 border-radius-1 text-uppercase position-absolute lh-1">Leilão</div>
+        </div>
+        <div class="content">
+          <h5 class="c-turq fs-6 mb-1 fw-700">Título do anúncio</h5>
+          <p class="summary fs-sm mb-1">Resumo da descrição do anúncio, com limitação de caract...</p>
+          <p class="init-bid fs-sm mb-1">Lance inicial: R$ <span class="bid">3.650,00</span></p>
+          <p class="deadline fs-sm mb-0">Término: <span class="data c-verdem">10/04/2024</span></p>
+        </div>
+      </div>
+      <div class="card p-2">
+        <div class="img-container position-relative mb-2">
+          <img src="/public/media/image-placeholder.jpg" alt="Fotografia do anúncio" class="w-100 border-radius-2">
+          <div class="modalidade mb-0 p-2 fs-sm bg-turq c-branco fw-600 border-radius-1 text-uppercase position-absolute lh-1">Leilão</div>
+        </div>
+        <div class="content">
+          <h5 class="c-turq fs-6 mb-1 fw-700">Título do anúncio</h5>
+          <p class="summary fs-sm mb-1">Resumo da descrição do anúncio, com limitação de caract...</p>
+          <p class="init-bid fs-sm mb-1">Lance inicial: R$ <span class="bid">3.650,00</span></p>
+          <p class="deadline fs-sm mb-0">Término: <span class="data c-verdem">10/04/2024</span></p>
+        </div>
+      </div>
+      <div class="card p-2">
+        <div class="img-container position-relative mb-2">
+          <img src="/public/media/image-placeholder.jpg" alt="Fotografia do anúncio" class="w-100 border-radius-2">
+          <div class="modalidade mb-0 p-2 fs-sm bg-turq c-branco fw-600 border-radius-1 text-uppercase position-absolute lh-1">Leilão</div>
+        </div>
+        <div class="content">
+          <h5 class="c-turq fs-6 mb-1 fw-700">Título do anúncio</h5>
+          <p class="summary fs-sm mb-1">Resumo da descrição do anúncio, com limitação de caract...</p>
+          <p class="init-bid fs-sm mb-1">Lance inicial: R$ <span class="bid">3.650,00</span></p>
+          <p class="deadline fs-sm mb-0">Término: <span class="data c-verdem">10/04/2024</span></p>
+        </div>
+      </div>
     </div>
   </section>
 
 
 
-
+  <section id="sect-footer" class="bg-verdee w-100">
+    <div class="container">
+      <img alt="Logo Scoob Credirio Sul"
+        src="https://www.sicoob.com.br/image/layout_set_logo?img_id=1284127&t=1716546347033" />
+      <p>Central de Atendimento Sicoob Atendimento 24h | Capitais e regiões metropolitanas: <a
+          href="tel:40001111">4000-1111</a> | Demais localidades: <a href="tel:0800642000">0800 642
+          000</a><br />Ouvidoria Sicoob: Atendimento seg. a sex. de 8h às 20h <a href="tel:08007250996">0800 725
+          0996</a> | <a href="www.ouvidoriasicoob.com.br" target="_blank">www.ouvidoriasicoob.com.br</a> | Deficientes
+        auditivos ou de fala: <a href="tel:08009400458">0800 940 0458</a><br />SAC - 24h <a href="tel:08007244420">0800
+          724 4420</a> | Demais serviços de atendimento <a href="www.sicoob.com.br"
+          target="_blank">www.sicoob.com.br</a></p>
+    </div>
+  </section>
 
   <script type="text/javascript" src="/public/scripts/jquery-3-3-1.min.js"></script>
   <script type="text/javascript" src="/public/scripts/popper-1-14-7.min.js"></script>

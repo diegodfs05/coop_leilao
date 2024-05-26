@@ -1,0 +1,51 @@
+/* -- 
+    Estilos do banner
+-- */
+#sect-banner {
+    margin-top: 98px;
+}
+#sect-banner .banner-text {
+    top: 35%;
+}
+
+/* --
+    Estilos da seção categorias
+-- */
+#sect-categorias .card {
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: all .5s;
+    height: 90px;
+}
+#sect-categorias .card:hover {
+    background-color: #eafffd;
+    transform: scale(.96);
+}
+#sect-categorias .card img {
+    width: 40px;
+}
+#sect-categorias .card .corpo-card p {
+    max-width: 150px;
+}
+
+/* --
+    Estilos da seção anúncios
+-- */
+#sect-anuncios .card {
+    width: 250px;
+    height: 330px;
+    flex-shrink: 0;
+    margin: .5rem;
+    cursor: pointer;
+    transition: all .5s;
+}
+#sect-anuncios .card:hover {
+    background-color: #eafffd;
+    transform: scale(1.05);
+    z-index: 2;
+}
+#sect-anuncios .card .img-container .modalidade {
+    right: 10px;
+    bottom: 10px;
+    opacity: .5;
+}
