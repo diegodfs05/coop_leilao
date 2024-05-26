@@ -18,6 +18,10 @@ app.use('/static', express.static(path.join(__dirname, 'views/static')));
 app.get('/static/home', (req, res) => {
     res.sendFile(path.join(__dirname, 'views/static/home/index.html'));
 });
+// SERVIR HOMEPAGE ESTATICA
+app.get('/static/auction', (req, res) => {
+    res.sendFile(path.join(__dirname, 'views/static/auction/index.html'));
+});
 
 
 

@@ -1,0 +1,38 @@
+/* --
+    Estilos da seção anúncio
+-- */
+#sect-anuncio .info-header {
+    gap: 10px;
+}
+
+#sect-anuncio .info-header button {
+    border: solid 1px var(--roxo-600);
+    border-radius: .5rem;
+    color: var(--verdee);
+    font-weight: 600;
+}
+
+/*-- 
+    Estilos do componente 
+-- */
+.componente-abas .nav .nav-link {
+    color: #ffffff !important;
+}
+
+.componente-abas .nav .nav-link.active {
+    color: #00AE9D !important;
+    font-weight: 900;
+    background-color: #ffffff !important;
+}
+
+.componente-abas a {
+    color: #00AE9D;
+}
+
+.componente-abas .cabecalho-abas {
+    background-color: #00AE9D;
+    padding: 22px 0px 12px 0px;
+    margin-bottom: 20px;
+}
+
+</style>

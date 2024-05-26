@@ -1,7 +1,7 @@
 @charset "UTF-8";
 @font-face {
   font-family: "Sicoob sans";
-  src: url("/public/font/SicoobSansVariable.woff2") format("woff2-variations"), url("https://www.sicoob.com.br/documents/20128/190187180/SicoobSansVariable.ttf") format("truetype");
+  src: url("/public/font/SicoobSansVariable.woff2") format("woff2-variations"), url("/public/font/SicoobSansVariable.ttf") format("truetype");
   font-display: swap;
   font-weight: 100 1000;
   font-stretch: 80% 100%;
@@ -9,48 +9,10 @@
 }
 @font-face {
   font-family: "Sicoob script";
-  src: url("https://www.sicoob.com.br/documents/20128/190187180/SicoobScriptVariable.woff2") format("woff2-variations"), url("https://www.sicoob.com.br/documents/20128/190187180/SicoobScriptVariable.ttf") format("truetype");
+  src: url("/public/font/SicoobScriptVariable.woff2") format("woff2-variations"), url("/public/font/SicoobScriptVariable.ttf") format("truetype");
   font-display: swap;
   font-weight: 100 1000;
   font-style: normal;
-}
-:root {
-  --turq-200: #00E0CA;
-  --turq-300: #00CCB8;
-  --turq: #00ae9d;
-  --turq-500: #00A091;
-  --turq-600: #009285;
-  --verdee-200: #005566;
-  --verdee-300: #004452;
-  --verdee: #003641;
-  --verdee-500: #002A33;
-  --verdee-600: #001E24;
-  --verdem-200: #92D421;
-  --verdem-300: #86C21E;
-  --verdem: #7DB61C;
-  --verdem-500: #73A81A;
-  --verdem-600: #679617;
-  --verdec-200: #EAF500;
-  --verdec-300: #D7E000;
-  --verdec: #C9D200;
-  --verdec-500: #B9C200;
-  --verdec-600: #A6AD00;
-  --roxo-200: #5956B3;
-  --roxo-300: #4E4CA9;
-  --roxo: #49479D;
-  --roxo-500: #41408C;
-  --roxo-600: #3B397E;
-  --branco: #FFFFFF;
-  --cinza-200: #F2F2F2;
-  --cinza-300: #F9F9F9;
-  --cinza-400: #D1D1D1;
-  --cinza-500: #B4B4B4;
-  --cinza-600: #9d9d9d;
-  --cinza-700: #6e6e6e;
-  --cinza-800: #5E5E5E;
-  --cinza-900: #333;
-  --preto: #000;
-  --transparente: rgba(0,0,0,0);
 }
 
 * {
@@ -161,6 +123,16 @@ section {
   #sect-navbar .container .menu-toggle {
     display: block;
   }
+}
+
+/* -- 
+    Estilos do banner
+-- */
+#sect-banner {
+  margin-top: 98px;
+}
+#sect-banner .banner-text {
+  top: 35%;
 }
 
 
