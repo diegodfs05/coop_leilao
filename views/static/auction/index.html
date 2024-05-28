@@ -1,22 +1,21 @@
-<!doctype xhtml>
+<!DOCTYPE xhtml>
 <html lang="pt-BR">
 
 <head>
   <title>Title</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="stylesheet" href="/public/css/bootstrap-4-3-1.min.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="stylesheet" href="/public/css/bootstrap-4-3-1.min.css" />
 
   <!-- Import Sicoob Web DS Styles -->
-  <link rel="stylesheet" href="/public/css/sicoob-styles.css">
+  <link rel="stylesheet" href="/public/css/sicoob-styles.css" />
   <!-- Import APP public CSS -->
-  <link rel="stylesheet" href="/public/css/styles.css">
+  <link rel="stylesheet" href="/public/css/styles.css" />
   <!-- Import static CSS -->
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./style.css" />
 </head>
 
 <body>
-
   <!-- 
     NAVBAR
   -->
@@ -60,9 +59,9 @@
       </div>
     </div>
     <picture>
-      <source media="(min-width: 1280px)" srcset="/public/media/banners/padrao-desktop-turq.jpg">
-      <source media="(min-width: 768px)" srcset="/public/media/banners/padrao-tablet-turq.jpg">
-      <img class="w-100" src="/public/media/banners/padrao-celular-turq.jpg" alt="Imagem de fundo do banner">
+      <source media="(min-width: 1280px)" srcset="/public/media/banners/padrao-desktop-turq.jpg" />
+      <source media="(min-width: 768px)" srcset="/public/media/banners/padrao-tablet-turq.jpg" />
+      <img class="w-100" src="/public/media/banners/padrao-celular-turq.jpg" alt="Imagem de fundo do banner" />
     </picture>
   </section>
 
@@ -75,253 +74,73 @@
       <div class="row">
         <div class="col-12 col-md-6">
           <h1 class="fs-6 fw-600">Título do anúncio</h1>
-          <img class="w-100 border-radius-1" src="/public/media/image-placeholder.jpg" alt="Capa do anúncio">
+          <img class="w-100 border-radius-1" src="/public/media/image-placeholder.jpg" alt="Capa do anúncio" />
         </div>
         <div class="col-12 col-md-6">
-          <p class="status w-100 p-1 bg-verdem c-branco text-center text-uppercase border-radius-1 fs-sm fw-600 mb-1">EM
-            ABERTO</p>
+          <p class="status w-100 p-1 bg-verdem c-branco text-center text-uppercase border-radius-1 fs-sm fw-600 mb-1">
+            EM ABERTO
+          </p>
           <div class="card d-flex flex-column p-2 w-100 mb-2">
             <p class="text-center fs-6 mb-1">ENCERRA EM:</p>
-            <p class="text-center fs-5 mb-0 lh-2">33 dias, 14 horas e 28 minutos</p>
+            <p class="text-center fs-5 mb-0 lh-2">
+              33 dias, 14 horas e 28 minutos
+            </p>
           </div>
           <p class="fs-6 mb-1 fw-700">Informações de registro:</p>
           <div class="card w-100 p-2 d-flex flex-row">
             <div class="w-50">
-              <p class="lh-2">Registrado em <span class="data-registro">17/02/2024</span> </p>
-              <p class="lh-2">Encerramento em <span class="encerramento">15/05/2024</span></p>
-              <p class="lh-2">Lance inicial <span class="lance-inicial">R$ 3.650,00</span> </p>
-              <p class="lh-2 mb-0">Localizado em <span class="localidade">Brasília - DF</span> </p>
+              <p class="lh-2">
+                Registrado em <span class="data-registro">17/02/2024</span>
+              </p>
+              <p class="lh-2">
+                Encerramento em <span class="encerramento">15/05/2024</span>
+              </p>
+              <p class="lh-2">
+                Lance inicial <span class="lance-inicial">R$ 3.650,00</span>
+              </p>
+              <p class="lh-2 mb-0">
+                Localizado em <span class="localidade">Brasília - DF</span>
+              </p>
             </div>
             <div class="w-50 card flex-row align-items-center border-radius-1">
-              <p class="lh-2 mb-0 fw-600 w-100 c-roxo-600 text-center">Lance atual:<br><span class="lance-atual">R$
-                  15.600,00</span></p>
+              <p class="lh-2 mb-0 fw-600 w-100 c-roxo-600 text-center">
+                Lance atual:<br /><span class="lance-atual">R$ 15.600,00</span>
+              </p>
             </div>
           </div>
-
         </div>
       </div>
 
       <div class="componente-abas">
-
         <!-- Cabeçalho com tabs -->
-        <div class="container-fluid cabecalho-abas">
-          <div class="container">
-            <ul class="nav nav-pills mb-3" id="pills-Tab" role="tablist">
-              <li class="nav-item"><a aria-controls="tab1" aria-selected="false" class="nav-link active" data-toggle="tab"
-                  href="#tab1" id="tabControl1" role="tab">Descrição do anúncio</a></li>
-              <li class="nav-item"><a aria-controls="tab2" aria-selected="false" class="nav-link" data-toggle="tab"
-                  href="#tab2" id="tabControl2" role="tab">Histórico de lances</a></li>
-            </ul>
-          </div>
+        <div class="container-fluid cabecalho-abas my-2">
+          <ul class="nav nav-pills mb-3" id="pills-Tab" role="tablist">
+            <li class="nav-item">
+              <a aria-controls="tab1" aria-selected="false" class="nav-link active btn btn-secondary" data-toggle="tab" href="#tab1" id="tabControl1" role="tab" type="button">Descrição do anúncio</a>
+            </li>
+            <li class="nav-item">
+              <a aria-controls="tab2" aria-selected="false" class="nav-link btn btn-secondary" data-toggle="tab"
+                href="#tab2" id="tabControl2" role="tab" type="button">Histórico de lances</a>
+            </li>
+          </ul>
         </div>
 
         <!-- Telas das tabs -->
 
-        <div class="tab-content container" id="myTabContent">
-
+        <div class="tab-content container card p-4 mx-3" id="myTabContent">
           <!-- Tela 1 -->
           <div aria-labelledby="tabControl1" class="tab-pane fade active show" id="tab1" role="tabpanel">
             <h3>Título da tab 1</h3>
-
-            <p>Texto da tab</p>
-
-            <p> </p>
-
-            <div class="container">
-              <div class="row">
-                <div class="col-xs-1">
-                  <p> </p>
-                </div>
-
-                <div class="col-xs-10">
-                  <table class="table table-bordered">
-                    <thead>
-                      <tr>
-                        <th scope="col" style="background-color:#e6e6e6">
-                          <h4>TABELA</h4>
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody style="text-align:center">
-                      <tr>
-                        <td scope="row">
-                          <p><a href="#" target="_blank"><b>RELATÓRIO ANUAL</b></a></p>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td scope="row" style="background-color:#f1f1f1">
-                          <p><a href="#" target="_blank">Relatório Dezembro de 2016</a></p>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td scope="row">
-                          <p><a href="#" target="_blank">Relatório Novembro de 2016</a></p>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td scope="row" style="background-color:#f1f1f1">
-                          <p><a href="#" target="_blank">Relatório Outubro de 2016</a></p>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td scope="row">
-                          <p><a href="#" target="_blank">Relatório Setembro de 2016</a></p>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td scope="row" style="background-color:#f1f1f1">
-                          <p><a href="#" target="_blank">Relatório Agosto de 2016</a></p>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td scope="row">
-                          <p><a href="#" target="_blank">Relatório Julho de 2016</a></p>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td scope="row" style="background-color:#f1f1f1">
-                          <p><a href="#" target="_blank">Relatório Junho de 2016</a></p>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td scope="row">
-                          <p><a href="#" target="_blank">Relatório Maio de 2016</a></p>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td scope="row" style="background-color:#f1f1f1">
-                          <p><a href="#" target="_blank">Relatório Abril de 2016</a></p>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td scope="row">
-                          <p><a href="#" target="_blank">Relatório Março de 2016</a></p>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td scope="row" style="background-color:#f1f1f1">
-                          <p><a href="#" target="_blank">Relatório Fevereiro de 2016</a></p>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td scope="row">
-                          <p><a href="#" target="_blank">Relatório Janeiro de 2016</a></p>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-
-                <div class="col-xs-1">
-                  <p> </p>
-                </div>
-              </div>
-            </div>
+            <p>TEXTO DA TAB 1</p>
           </div>
 
           <!-- Tela 2 -->
           <div aria-labelledby="tabControl2" class="tab-pane fade" id="tab2" role="tabpanel">
             <h3>Título da tab 2</h3>
-
-            <p>Texto da tab</p>
-
-            <p> </p>
-
-            <div class="container">
-              <div class="row">
-                <div class="col-xs-1">
-                  <p> </p>
-                </div>
-
-                <div class="col-xs-10">
-                  <table class="table table-bordered">
-                    <thead>
-                      <tr>
-                        <th scope="col" style="background-color:#e6e6e6">
-                          <h4>TABELA</h4>
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody style="text-align:center">
-                      <tr>
-                        <td scope="row">
-                          <p><a href="#" target="_blank"><b>RELATÓRIO ANUAL</b></a></p>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td scope="row" style="background-color:#f1f1f1">
-                          <p><a href="#" target="_blank">Balancete - Dezembro de 2017</a></p>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td scope="row">
-                          <p><a href="#" target="_blank">Balancete - Novembro de 2017</a></p>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td scope="row" style="background-color:#f1f1f1">
-                          <p><a href="#" target="_blank">Balancete - Outubro de 2017</a></p>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td scope="row">
-                          <p><a href="#" target="_blank">Balancete - Setembro de 2017</a></p>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td scope="row" style="background-color:#f1f1f1">
-                          <p><a href="#" target="_blank">Balancete - Agosto de 2017</a></p>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td scope="row">
-                          <p><a href="#" target="_blank">Balancete - Julho de 2017</a></p>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td scope="row" style="background-color:#f1f1f1">
-                          <p><a href="#" target="_blank">Balancete - Junho de 2017</a></p>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td scope="row">
-                          <p><a href="#" target="_blank">Balancete - Maio de 2017</a></p>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td scope="row" style="background-color:#f1f1f1">
-                          <p><a href="#" target="_blank">Balancete - Abril de 2017</a></p>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td scope="row">
-                          <p><a href="#" target="_blank">Balancete - Março de 2017</a></p>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td scope="row" style="background-color:#f1f1f1">
-                          <p><a href="#" target="_blank">Balancete - Fevereiro de 2017</a></p>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td scope="row">
-                          <p><a href="#" target="_blank">Balancete - Janeiro de 2017</a></p>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-
-                <div class="col-xs-1">
-                  <p> </p>
-                </div>
-              </div>
-            </div>
+            <p>TEXTO DA TAB 2</p>
           </div>
-
         </div>
       </div>
-
     </div>
   </section>
 
@@ -332,13 +151,19 @@
     <div class="container">
       <img alt="Logo Scoob Credirio Sul"
         src="https://www.sicoob.com.br/image/layout_set_logo?img_id=1284127&t=1716546347033" />
-      <p>Central de Atendimento Sicoob Atendimento 24h | Capitais e regiões metropolitanas: <a
-          href="tel:40001111">4000-1111</a> | Demais localidades: <a href="tel:0800642000">0800 642
-          000</a><br />Ouvidoria Sicoob: Atendimento seg. a sex. de 8h às 20h <a href="tel:08007250996">0800 725
-          0996</a> | <a href="www.ouvidoriasicoob.com.br" target="_blank">www.ouvidoriasicoob.com.br</a> | Deficientes
-        auditivos ou de fala: <a href="tel:08009400458">0800 940 0458</a><br />SAC - 24h <a href="tel:08007244420">0800
-          724 4420</a> | Demais serviços de atendimento <a href="www.sicoob.com.br"
-          target="_blank">www.sicoob.com.br</a></p>
+      <p>
+        Central de Atendimento Sicoob Atendimento 24h | Capitais e regiões
+        metropolitanas: <a href="tel:40001111">4000-1111</a> | Demais
+        localidades: <a href="tel:0800642000">0800 642 000</a><br />Ouvidoria
+        Sicoob: Atendimento seg. a sex. de 8h às 20h
+        <a href="tel:08007250996">0800 725 0996</a> |
+        <a href="www.ouvidoriasicoob.com.br" target="_blank">www.ouvidoriasicoob.com.br</a>
+        | Deficientes auditivos ou de fala:
+        <a href="tel:08009400458">0800 940 0458</a><br />SAC - 24h
+        <a href="tel:08007244420">0800 724 4420</a> | Demais serviços de
+        atendimento
+        <a href="www.sicoob.com.br" target="_blank">www.sicoob.com.br</a>
+      </p>
     </div>
   </section>
 

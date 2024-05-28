@@ -15,24 +15,24 @@
 /*-- 
     Estilos do componente 
 -- */
-.componente-abas .nav .nav-link {
-    color: #ffffff !important;
+.componente-abas .nav .btn-group {
+    border-radius: .75rem;
 }
-
+.componente-abas .nav .nav-link {
+    color: var(--verdee) !important;
+    border: solid 2px var(--verdee) !important;
+    margin-inline: 5px;
+}
 .componente-abas .nav .nav-link.active {
-    color: #00AE9D !important;
-    font-weight: 900;
-    background-color: #ffffff !important;
+    background-color: var(--verdee)!important;
+    color: white;
+    border-color: var(--verdee) !important;
+}
+.componente-abas .nav .nav-link:hover,.componente-abas .nav .nav-link.active:hover {
+    background-color: var(--verdee)!important;
+    color: var(--branco)!important;
 }
 
 .componente-abas a {
     color: #00AE9D;
 }
-
-.componente-abas .cabecalho-abas {
-    background-color: #00AE9D;
-    padding: 22px 0px 12px 0px;
-    margin-bottom: 20px;
-}
-
-</style>
