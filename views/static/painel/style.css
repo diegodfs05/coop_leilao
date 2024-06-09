@@ -1,0 +1,136 @@
+#sect-painel {
+    padding-top: 120px;
+    height: 100vh !important;
+}
+
+#sect-painel a.btn {
+    cursor: pointer;
+}
+
+#sect-painel #options-label {
+    position: absolute;
+    top: 0px;
+    left: -170px;
+    width: 200px;
+    z-index: 2;
+    opacity: .6;
+    border-radius: 20px;
+    line-height: 200%;
+    border: solid 1px rgba(0, 0, 0, .125);
+    transition: all 1s;
+}
+
+#sect-painel #options-label a {
+    text-decoration: none;
+    font-weight: 700;
+    transition: all .3s;
+    width: 100%;
+    padding-inline: 20px;
+    cursor: pointer;
+    border: solid 1px transparent;
+}
+
+#sect-painel #options-label a:hover, #sect-painel #options-label a.active {
+    border-top: solid 1px rgba(0, 0, 0, .125);
+    border-bottom: solid 1px rgba(0, 0, 0, .125);
+
+}
+
+#sect-painel #options-label:hover {
+    opacity: 1;
+    left: -50px;
+}
+
+#sect-painel #options-label:hover a {
+    color: var(--verdee);
+}
+
+#sect-painel .card {
+    width: 100% !important;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+#sect-painel .painel-main {
+    height: 80vh !important;
+}
+
+#sect-painel section {
+    transition: all .6s;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(.8);
+    position: absolute;
+    padding-right: 20px;
+}
+
+#sect-painel .ativo {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: scale(1) !important;
+}
+
+#sect-painel #profile-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+    background-image: url('/public/media/profile-icon.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    border: solid 1px var(--turq);
+    box-shadow: 0px 0px 0px 0px var(--turq);
+    opacity: .8;
+    transform: scale(.95);
+    transition: all .3s
+}
+
+#sect-painel #profile-image:hover {
+    box-shadow: 0px 0px 20px -5px var(--turq);
+    opacity: 1;
+    transform: scale(1);
+
+}
+
+#sect-painel #profile-image a.btn {
+    transition: all .3s;
+    transform: scale(1.2);
+    opacity: 0;
+    visibility: hidden;
+}
+
+#sect-painel #profile-image:hover a.btn {
+    transform: scale(1);
+    opacity: 1;
+    visibility: visible;
+}
+
+#sect-painel #settings-anuncios .col-header {
+    margin-bottom: 20px;
+}
+
+#sect-painel #settings-anuncios .tupla {
+    padding-block: 10px;
+    margin-bottom: 0px;
+}
+
+#sect-painel #settings-anuncios .tupla span {
+    cursor: pointer;
+}
+
+#sect-painel #settings-anuncios #modal-anuncios {
+    position: absolute;
+    z-index: 2;
+    max-width: 700px;
+    transition: all .6s;
+    visibility: hidden;
+    opacity: 0;
+    transform: scale(.8);
+}
+
+#sect-painel #settings-anuncios #modal-anuncios p {
+    margin: 10px 0px 0px 0px;
+}
+
+@media(max-width: 1200px) {}

@@ -1,0 +1,117 @@
+<!-- views/pages/painel.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head', {title: 'Painel de Controle'}) %>
+<body>
+    <%- include('./partials/navbar') %>
+    <link rel="stylesheet" href="/static/painel/style.css">
+    <section id="sect-painel" class="bg-branco w-100 h-100 pb-4">
+        <div class="container h-100 d-flex align-items-start justify-content-center position-relative">
+            <div id="options-label" class="bg-branco flex-column d-flex c-verdee text-right text-uppercase py-3 w-md-25">
+                <a>Perfil</a>
+                <a>Anuncios</a>
+                <a>Cooperativas</a>
+                <a></a>
+            </div>
+            <div class="painel-main card p-4 h-100 w-75">
+                <section id="settings-perfil" class="w-100 row">
+                    <div class="col-12 col-md-6">
+                        <h1>Perfil</h1>
+                        <p>Perfil de usuário e informações de cadastro.</p>
+                        <h6 class="mb-0">Nome de usuário</h6>
+                        <input type="text" placeholder="Nome de usuário" class="w-100 mb-3">
+                        <h6 class="mb-0">E-mail</h6>
+                        <input type="text" placeholder="Endereço de e-mail" class="w-100 mb-3">
+                        <h6 class="mb-0">Data de registro</h6>
+                        <input type="text" placeholder="Data de registro" class="w-100 mb-3">
+                        <h6 class="mb-0">Senha</h6>
+                        <input type="text" placeholder="Senha do usuário. Não compartilhe esta informação." class="w-100 mb-3">
+                        <a href="#" class="btn btn-primary mt-3">Salvar alterações</a>
+                      </div>
+                      <div class="col-12 col-md-6 d-flex flex-column align-items-center mt-2 mt-md-0">
+                        <div id="profile-image" class="d-flex justify-content-center align-items-center p-3 mb-3">
+                          <a href="" class="btn bg-branco border-verdee c-verdee">editar</a>
+                        </div>
+                        <h6 class="w-100 text-center text-balance">Maria Aparecida Andrade de Carvalho</h6>
+                        <p class="w-100 text-center">Brasília - DF</p>
+                      </div>
+                </section>
+                <section id="settings-anuncios" class="w-100 ativo">
+                    <div id="modal-anuncios" class="card p-4 bg-branco">
+                        <div class="w-100">
+                            <h3 class="titulo">Registrar novo anúncio</h3>
+                            <form id="auction-form" action="/painel/new-auction" method="POST">
+                                <p>Título:</p>
+                                <input type="text" name="titulo" placeholder="Título do anúncio" class="w-100">
+                                <p>Valor/Lance Inicial (R$):</p>
+                                <input type="text" name="valor" placeholder="Valor do item (R$)" class="w-100">
+                                <p>Tipo de venda:</p>
+                                <select name="tipo" class="w-100 py-1">
+                                    <option value="Leilão">Leilão</option>
+                                    <option value="Venda direta">Venda direta</option>
+                                </select>
+                                <p>Cooperativa:</p>
+                                <input type="text" name="cooperativa" placeholder="Cooperativa vendedora" class="w-100">
+                                <p>Data de expiração do pregão ou da venda:</p>
+                                <input type="date" name="dataExpiracao" placeholder="Data de expiração" class="w-100">
+                                <p>Descrição:</p>
+                                <textarea name="description" placeholder="Descrição do anúncio" class="w-100"></textarea>
+                                <input type="hidden" name="registrationDate" id="registrationDate">
+                                <div class="d-flex align-items-center mt-4">
+                                    <button type="submit" class="concl-anuncio btn btn-primary mr-2">Salvar</button>
+                                    <a class="concl-anuncio btn btn-secondary">Cancelar</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <h1>Anúncios</h1>
+                        <p>Gestão de anúncios do sistema</p>
+                        <a class="btn btn-primary mb-2 cadastra-anuncio">Incluir Anúncio</a>
+                        <div id="lista-anuncios" class="card p-3 d-flex flex-row w-100 text-center">
+                            <div class="col-2 flex-shrink-1">
+                                <p class="col-header c-cinza-600">ID</p>
+                                <% auctions.forEach(auction => { %>
+                                    <p class="tupla"><%= auction.id %></p>
+                                <% }) %>
+                            </div>
+                            <div class="col-6 flex-grow-1">
+                                <p class="col-header c-cinza-600">Título</p>
+                                <% auctions.forEach(auction => { %>
+                                    <p class="tupla"><%= auction.titulo %></p>
+                                <% }) %>
+                            </div>
+                            <div class="col-2 flex-shrink-1">
+                                <p class="col-header c-cinza-600">Status</p>
+                                <% auctions.forEach(auction => { %>
+                                    <p class="tupla"><%= new Date(auction.dataExpiracao) > new Date() ? 'Ativo' : 'Expirado' %></p>
+                                <% }) %>
+                            </div>
+                            <div class="col-3 flex-shrink-1">
+                                <p class="col-header c-cinza-600">Opções</p>
+                                <% auctions.forEach(auction => { %>
+                                    <div class="tupla">
+                                        <form action="/painel/delete-auction" method="POST" style="display: inline;">
+                                            <input type="hidden" name="id" value="<%= auction.id %>">
+                                            <button type="submit" class="remove-item" style="background: none; border: none; color: red; cursor: pointer;">Excluir</button>
+                                        </form>
+                                        | <span>Editar</span>
+                                    </div>
+                                <% }) %>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section id="settings-cooperativas" class="w-100">
+                    <div class="col-12">
+                        <h1>Cooperativas</h1>
+                        <p>Em breve</p>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+    
+    <script type="text/javascript" src="/static/painel/script.js"></script>
+</body>
+</html>

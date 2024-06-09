@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head', {title: 'Anúncio' }) %>
+
+    <body>
+        <%- include('./partials/navbar') %>
+            <link rel="stylesheet" href="/static/auction/style.css">
+            <!-- BANNER -->
+            <section id="sect-banner" class="w-100 bg-turq position-relative">
+                <div class="container">
+                    <div class="banner-text position-absolute">
+                        <h1 class="c-branco fs-3">Leilões do Sicoob</h1>
+                        <p class="c-branco">Confira nossas oportunidades de negócios</p>
+                    </div>
+                </div>
+                <picture>
+                    <source media="(min-width: 1280px)" srcset="/public/media/banners/padrao-desktop-turq.jpg">
+                    <source media="(min-width: 768px)" srcset="/public/media/banners/padrao-tablet-turq.jpg">
+                    <img class="w-100" src="/public/media/banners/padrao-celular-turq.jpg"
+                        alt="Imagem de fundo do banner">
+                </picture>
+            </section>
+
+            <!-- ANÚNCIO -->
+            <section id="sect-anuncio" class="w-100 py-4">
+                <div class="container">
+                    <a href="/" class="btn btn-primary mb-4">Voltar ao início</a>
+                    <div class="row">
+                        <div class="col-12 col-md-6">
+                            <h1 id="auction-title" class="fs-6 fw-600">
+                                <%= auction.titulo %>
+                            </h1>
+                            <img class="w-100 border-radius-1" src="/public/media/image-placeholder.jpg"
+                                alt="Capa do anúncio" />
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <p
+                                class="status w-100 p-1 <%= new Date(auction.dataExpiracao) > new Date() ? 'bg-verdem' : 'bg-roxo' %> c-branco text-center text-uppercase border-radius-1 fs-sm fw-600 mb-1">
+                                <%= new Date(auction.dataExpiracao)> new Date() ? 'Ativo' : 'Expirado' %>
+                            </p>
+                            <div
+                                class="card d-flex flex-column p-2 w-100 mb-2">
+                                <p class="text-center fs-6 mb-1">ENCERRA EM:</p>
+                                <p id="expiration-timer" class="text-center fs-5 mb-0 lh-2">
+                                    <script>
+                                        function calculateTimeLeft(expirationDate) {
+                                            const now = new Date();
+                                            const expiration = new Date(expirationDate);
+                                            const timeDiff = expiration - now;
+
+                                            if (timeDiff <= 0) {
+                                                return 'Expirado';
+                                            }
+
+                                            const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+                                            const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                                            const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+
+                                            return `${days} dias, ${hours} horas e ${minutes} minutos`;
+                                        }
+                                        document.getElementById('expiration-timer').textContent = calculateTimeLeft('<%= auction.dataExpiracao %>');
+                                    </script>
+                                </p>
+                            </div>
+                            <p class="fs-6 mb-1 fw-700">Informações de registro:</p>
+                            <div class="card w-100 p-2 d-flex flex-row">
+                                <div class="w-50">
+                                    <p class="lh-2">
+                                        Registrado em <span class="registry-date">
+                                            <%= auction.registrationDate %>
+                                        </span>
+                                    </p>
+                                    <p class="lh-2">
+                                        Encerramento em <span class="expiration-date">
+                                            <%= auction.dataExpiracao %>
+                                        </span>
+                                    </p>
+                                    <p class="lh-2">
+                                        Lance inicial <span class="initial-bid">R$ <%= auction.valor.toFixed(2) %>
+                                                </span>
+                                    </p>
+                                    <p class="lh-2 mb-0">
+                                        Localizado em <span class="localidade">Brasília - DF</span>
+                                    </p>
+                                </div>
+                                <div class="w-50 card flex-row align-items-center border-radius-1">
+                                    <p class="lh-2 mb-0 fw-600 w-100 c-roxo-600 text-center">
+                                        Lance atual:<br /><span class="lance-atual">R$ 15.600,00</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="componente-abas">
+                        <!-- Cabeçalho com tabs -->
+                        <div class="container-fluid cabecalho-abas my-2">
+                            <ul class="nav nav-pills mb-3" id="pills-Tab" role="tablist">
+                                <li class="nav-item">
+                                    <a aria-controls="tab1" aria-selected="false"
+                                        class="nav-link active btn btn-secondary" data-toggle="tab" href="#tab1"
+                                        id="tabControl1" role="tab" type="button">Descrição do anúncio</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a aria-controls="tab2" aria-selected="false" class="nav-link btn btn-secondary"
+                                        data-toggle="tab" href="#tab2" id="tabControl2" role="tab"
+                                        type="button">Histórico de lances</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Telas das tabs -->
+
+                        <div class="tab-content container card p-4 mx-3" id="myTabContent">
+                            <!-- Tela 1 -->
+                            <div aria-labelledby="tabControl1" class="tab-pane fade active show" id="tab1"
+                                role="tabpanel">
+                                <h3>Descrição do anúncio</h3>
+                                <p>
+                                    <%= auction.description %>
+                                </p>
+                            </div>
+
+                            <!-- Tela 2 -->
+                            <div aria-labelledby="tabControl2" class="tab-pane fade" id="tab2" role="tabpanel">
+                                <h3>Histórico de lances</h3>
+                                <p>TEXTO DA TAB 2</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <%- include('./partials/footer') %>
+            
+            <script type="text/javascript" src="/static/auction/script.js"></script>
+    </body>
+
+</html>

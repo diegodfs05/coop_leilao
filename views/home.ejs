@@ -1,2 +1,84 @@
-<h1>Welcome to the Home Page</h1>
-<p>This is a dynamic home page with a navbar.</p>
+<!-- views/pages/home.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head', {title: 'Página Inicial'}) %>
+<body>
+    <%- include('./partials/navbar') %>
+    <link rel="stylesheet" href="/static/home/style.css">
+    <section id="sect-banner" class="w-100 bg-turq position-relative">
+        <div class="container">
+            <div class="banner-text position-absolute">
+                <h1 class="c-branco fs-3">Leilões do Sicoob</h1>
+                <p class="c-branco">Confira nossas oportunidades de negócios</p>
+            </div>
+        </div>
+        <picture>
+            <source media="(min-width: 1280px)" srcset="/public/media/banners/padrao-desktop-turq.jpg">
+            <source media="(min-width: 768px)" srcset="/public/media/banners/padrao-tablet-turq.jpg">
+            <img class="w-100" src="/public/media/banners/padrao-celular-turq.jpg" alt="Imagem de fundo do banner">
+        </picture>
+    </section>
+
+    <!-- CATEGORIAS -->
+    <section id="sect-categorias" class="py-4 acland">
+        <div class="container title mb-3">
+          <h3 class="fs-4">Selecione uma categoria</h1>
+        </div>
+        <div class="container d-flex justify-content-center align-items-center flex-wrap">
+          <div class="card d-flex align-items-center flex-row p-2 m-1 w-sm-100">
+            <img src="/public/media/icons/carro_colorido.png" alt="ícone automóvel">
+            <div class="corpo-card ml-2">
+              <h2 class="fs-6 mb-0">Automóveis</h2>
+              <p class="mb-0 fs-sm lh-2">Carros, motos, caminhões</p>
+            </div>
+          </div>
+          <div class="card d-flex align-items-center flex-row p-2 m-1 w-sm-100">
+            <img src="/public/media/icons/casa_2_colorido.png" alt="ícone imóvel">
+            <div class="corpo-card ml-2">
+              <h2 class="fs-6 mb-0">Imóveis</h2>
+              <p class="mb-0 fs-sm lh-2">Apartamentos, casas, lotes, chácaras</p>
+            </div>
+          </div>
+          <div class="card d-flex align-items-center flex-row p-2 m-1 w-sm-100">
+            <img src="/public/media/icons/celular_computador_colorido.png" alt="ícone imóvel">
+            <div class="corpo-card ml-2">
+              <h2 class="fs-6 mb-0">Eletrônicos</h2>
+              <p class="mb-0 fs-sm lh-2">Equipamentos eletrônicos em geral</p>
+            </div>
+          </div>
+          <div class="card d-flex align-items-center flex-row p-2 m-1 w-sm-100">
+            <img src="/public/media/icons/dados_colorido.png" alt="ícone imóvel">
+            <div class="corpo-card ml-2">
+              <h2 class="fs-6 mb-0">Mobília</h2>
+              <p class="mb-0 fs-sm lh-2">Para sua casa ou sua empresa</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    
+
+    <!-- ANUNCIOS -->
+    <section id="sect-anuncios" class="py-4 acland">
+        <div class="container d-flex justify-content-center align-items-center flex-wrap">
+            <% auctions.forEach(auction => { %>
+                <div class="card p-2" onclick="window.location.href='/auction?id=<%= auction.id %>'">
+                    <div class="img-container position-relative mb-2">
+                        <img src="/public/media/image-placeholder.jpg" alt="Fotografia do anúncio" class="w-100 border-radius-2">
+                        <div class="modalidade mb-0 p-2 fs-sm bg-turq c-branco fw-600 border-radius-1 text-uppercase position-absolute lh-1">
+                            <%= auction.tipo %>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <h5 class="c-turq fs-6 mb-1 fw-700"><%= auction.titulo %></h5>
+                        <p class="summary fs-sm mb-1"><%= (auction.description && auction.description.length > 30) ? auction.description.substring(0, 30) + '...' : auction.description %></p>
+                        <p class="init-bid fs-sm mb-1">Lance inicial: R$ <span class="bid"><%= auction.valor.toFixed(2) %></span></p>
+                        <p class="deadline fs-sm mb-0">Término: <span class="data c-verdem"><%= auction.dataExpiracao %></span></p>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+    </section>
+    <%- include('./partials/footer') %>
+    <script type="text/javascript" src="/static/home/script.js"></script>
+</body>
+</html>
